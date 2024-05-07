@@ -9,6 +9,7 @@
         <link href- "{% static 'app/css/style.css' %}" rel="stylesheet">
         <link href- "{% static 'app/css/owl.carousel.min.css' %}" rel="stylesheet">
         <link href- "{% static 'app/css/all.min.css' %}" rel="stylesheet">
+        <link rel="stylesheet" type="text/css" href="{% static "app/css/main.css" %}">
         <!-- js -->
         <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.1/jquery.min.js" integrity="sha512-v2CJ7UaYy4JwqLDIrZUI/4hqeoQieOmAZNXBeQyjo21dadnwR+8ZaIJVT8EE2iyI61OV8e6M8PP2/4hpQINQ/g==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
         <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.8/dist/umd/popper.min.js" integrity="sha384-I7E8VVD/ismYTF4hNIPjVp/Zjvgyol6VFvRkX/vR+Vc4jQkC+hVqc2pM8ODewa9r" crossorigin="anonymous"></script>
@@ -19,7 +20,6 @@
             <title>Web ban hang online</title>
         <meta name="description" content="">
         <meta name="viewport" content="width=device-width, initial-scale=1">
-        <link rel="stylesheet" href="">
     </head>
     <body>
         <!-- Menu -->
@@ -87,6 +87,7 @@
           <!-- main body-->
           {% block banner_slider %} {% endblock banner_slider %}
           {% block main-content %} {% endblock main-content %}
+          {% block cart_content%} {% endblock cart_content %}
           <!-- footer -->
           <footer class="container--Fluid bg-success text-center fixed-bottom p-2 mt-5">
             copyright 2022
