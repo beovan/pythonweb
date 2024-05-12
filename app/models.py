@@ -2,7 +2,7 @@ from django.db import models
 from django.contrib.auth.models import User
 
 # Create your models here.
-class Custormer(models.Model):
+class Customer(models.Model):
     user = models.OneToOneField(User, on_delete=models.SET_NULL,null =True,blank=False)
     name = models.CharField(max_length=200,null=True)
     email = models.CharField(max_length=200,null=True)
@@ -25,7 +25,7 @@ class Product(models.Model):
             url = ''
         return url
 class Order(models.Model):
-    custormer = models.ForeignKey(Custormer,on_delete=models.SET_NULL,blank=True,null=True)
+    customer = models.ForeignKey(Customer,on_delete=models.SET_NULL,blank=True,null=True)
     date_order = models.DateTimeField(auto_now_add=True)
     complete = models.BooleanField(default=False,null=True,blank=False)
     transaction_id = models.CharField(max_length=200,null=True)
@@ -52,7 +52,7 @@ class OrderItem(models.Model):
         total = self.product.price * self.quantity
         return total
 class ShippingAddress(models.Model):
-    custormer = models.ForeignKey(Custormer,on_delete=models.SET_NULL,blank=True,null=True)
+    customer = models.ForeignKey(Customer,on_delete=models.SET_NULL,blank=True,null=True)
     order = models.ForeignKey(Order,on_delete=models.SET_NULL,blank=True,null=True)
     address = models.CharField(max_length=200,null=True)
     city = models.CharField(max_length=200,null=True)
